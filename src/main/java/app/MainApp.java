@@ -21,7 +21,7 @@ import model.Poi;
 import model.PoiType;
 import util.CityGridGenerator;
 import util.PoiGenerator;
-
+import app.GraphView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -89,12 +89,23 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) {
-        Scene menuScene = new Scene(MenuView.build(cfg -> {
-            Scene vizScene = new Scene(buildVisualizer(stage, cfg), 1280, 820);
-            stage.setTitle("Cidade 100x100");
-            stage.setScene(vizScene);
-        }), 520, 360);
+        showMenu(stage);
+    }
 
+    private void showMenu(Stage stage) {
+        Scene menuScene = new Scene(
+                MenuView.build(
+                        // Modo 1: cidade 100x100
+                        cfg -> {
+                            Scene vizScene = new Scene(buildVisualizer(stage, cfg), 1280, 820);
+                            stage.setTitle("Cidade 100x100 — Grafos");
+                            stage.setScene(vizScene);
+                        },
+                        // Modo 2: carregar arquivo Formato A ou B
+                         () -> GraphView.show(stage, _v -> showMenu(stage))
+                ),
+                560, 440
+        );
         stage.setTitle("Projeto Grafos");
         stage.setScene(menuScene);
         stage.show();
@@ -294,17 +305,7 @@ public class MainApp extends Application {
             status.setText(baseStatus("Trocou algoritmo."));
         });
 
-        backBtn.setOnAction(e -> {
-            stopAnimation();
-            Scene menuScene = new Scene(MenuView.build(cfg2 -> {
-                Scene vizScene = new Scene(buildVisualizer(stage, cfg2), 1280, 820);
-                stage.setTitle("Cidade 100x100");
-                stage.setScene(vizScene);
-            }), 520, 360);
-
-            stage.setTitle("Projeto Grafos");
-            stage.setScene(menuScene);
-        });
+        backBtn.setOnAction(e -> { stopAnimation(); showMenu(stage); });
 
         return root;
     }
