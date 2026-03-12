@@ -164,7 +164,7 @@ public class MainApp extends Application {
         results.setStyle("-fx-font-family: Consolas; -fx-font-size: 12px;");
         results.setText("=== RESULTADOS ===\nSelecione um destino e rode o algoritmo.");
 
-        Label resultsTitle = new Label("Relatório");
+        Label resultsTitle = new Label("Relatorio");
         resultsTitle.setStyle("-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #111827;");
 
         VBox rightPanel = new VBox(10, resultsTitle, results);
@@ -180,9 +180,9 @@ public class MainApp extends Application {
         status = new Label();
         status.setStyle("-fx-font-size: 13px; -fx-text-fill: #111827;");
 
-        Button runBtn = new Button("▶ Rodar");
-        Button resetBtn = new Button("↺ Reset");
-        Button backBtn = new Button("⟵ Menu");
+        Button runBtn = new Button("Rodar");
+        Button resetBtn = new Button("Reset");
+        Button backBtn = new Button("Menu");
 
         runBtn.setStyle("-fx-font-weight: bold;");
         resetBtn.setStyle("-fx-font-weight: bold;");
@@ -340,7 +340,7 @@ public class MainApp extends Application {
         boolean useBfs = (algo instanceof BfsAlgorithm);
         initAlgorithm(useBfs);
 
-        results.setText("=== RESULTADOS ===\nDestino escolhido: " + p.getName() + "\nAgora clique em ▶ Rodar.");
+        results.setText("=== RESULTADOS ===\nDestino escolhido: " + p.getName() + "\nAgora clique em  Rodar.");
         status.setText(baseStatus("Destino: " + p.getName() + " (" + p.getType() + ")."));
     }
 

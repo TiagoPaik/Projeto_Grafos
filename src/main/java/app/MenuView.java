@@ -39,7 +39,7 @@ public class MenuView {
         sub.setStyle("-fx-font-size: 13px; -fx-text-fill: #475569;");
 
         // ---- Seção 1: Cidade 100×100 ----
-        Label secCity = new Label("Modo 1 — Cidade 100 × 100 (entrada interna)");
+        Label secCity = new Label("Modo 1  Cidade 100 x 100 (entrada interna)");
         secCity.setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;");
 
         ChoiceBox<Algo> algoBox = new ChoiceBox<>();
@@ -50,7 +50,7 @@ public class MenuView {
         repBox.getItems().addAll(Rep.LISTA_INCIDENCIA, Rep.MATRIZ_ADJ);
         repBox.setValue(Rep.LISTA_INCIDENCIA);
 
-        Button startCityBtn = new Button("▶  Abrir Cidade");
+        Button startCityBtn = new Button("Abrir Cidade");
         startCityBtn.setStyle("""
                 -fx-font-weight: bold;
                 -fx-background-color: #4f46e5;
@@ -64,10 +64,6 @@ public class MenuView {
         GridPane cityGrid = new GridPane();
         cityGrid.setHgap(10);
         cityGrid.setVgap(8);
-        cityGrid.add(new Label("Algoritmo:"),     0, 0);
-        cityGrid.add(algoBox,                     1, 0);
-        cityGrid.add(new Label("Representação:"), 0, 1);
-        cityGrid.add(repBox,                      1, 1);
         cityGrid.add(startCityBtn,                1, 2);
 
         // ---- Separador ----
@@ -75,20 +71,20 @@ public class MenuView {
         sep.setPadding(new Insets(4, 0, 4, 0));
 
         // ---- Seção 2: Arquivo ----
-        Label secFile = new Label("Modo 2 — Carregar arquivo .txt (Formato A ou B)");
+        Label secFile = new Label("Modo 2  Carregar arquivo .txt (Formato A ou B)");
         secFile.setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;");
 
         Label fmtHint = new Label(
-                "Formato A (lista de adjacência):\n" +
+                "Formato A (lista de adjacencia):\n" +
                         "  Linha 1:  n  m  tipo        (tipo = D ou U)\n" +
                         "  Linhas 2..m+1:  u  v  [w]\n\n" +
-                        "Formato B (matriz de adjacência):\n" +
+                        "Formato B (matriz de adjacencia):\n" +
                         "  Linha 1:  n  tipo\n" +
                         "  Linhas 2..n+1:  n valores (0/1 ou pesos)\n"
         );
         fmtHint.setStyle("-fx-font-family: Consolas; -fx-font-size: 11px; -fx-text-fill: #64748b;");
 
-        Button loadFileBtn = new Button("📂  Carregar arquivo .txt");
+        Button loadFileBtn = new Button("Carregar arquivo .txt");
         loadFileBtn.setStyle("""
                 -fx-font-weight: bold;
                 -fx-background-color: #0ea5e9;

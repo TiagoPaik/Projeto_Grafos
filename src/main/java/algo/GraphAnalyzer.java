@@ -317,21 +317,6 @@ public class GraphAnalyzer {
         }
         sb.append("\n\n");
 
-        // Deteccao de ciclo
-        sb.append("  Deteccao de Ciclo:\n");
-        if (g.getType() == Graph.Type.DIRECTED) {
-            sb.append("  Regra usada: aresta de retorno (back-edge) -- ocorre quando\n");
-            sb.append("  DFS visita (u,v) e v ainda esta na pilha de recursao (CINZA).\n");
-            sb.append("  Isso indica que v eh ancestral de u, formando um ciclo.\n\n");
-        } else {
-            sb.append("  Regra usada: aresta (u,v) onde v ja foi visitado e v != pai(u).\n");
-            sb.append("  Em grafo nao-direcionado, isso caracteriza um ciclo.\n\n");
-        }
-        sb.append(hasCycle[0]
-                ? "  Resultado : [CICLO DETECTADO]\n  Evidencia : " + backEdge[0] + "\n"
-                : "  Resultado : [SEM CICLO] -- aciclico a partir de s\n");
-        sb.append("\n");
-
         // Caminho DFS s -> t com hops e km
         sb.append("  Caminho DFS  s=").append(s).append(" -> t=").append(t).append(":\n");
         if (!visited[t]) {

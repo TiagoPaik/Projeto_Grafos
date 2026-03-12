@@ -120,11 +120,11 @@ public class GraphSearch {
             visited[u] = true;
             visitOrder.add(u);
 
-            if (u == t) {
-                List<Integer> path = buildPath(parent, s, t);
-                double w = pathWeight(g, path);
-                return new Result("DFS", true, path, visitOrder, w);
-            }
+//            if (u == t) {
+//                List<Integer> path = buildPath(parent, s, t);
+//                double w = pathWeight(g, path);
+//                return new Result("DFS", true, path, visitOrder, w);
+//            }
 
             // ordem reversa para processar vizinhos na ordem natural da lista
             List<Graph.Edge> nbrs = g.neighbors(u);

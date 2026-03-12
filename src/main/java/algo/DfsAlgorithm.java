@@ -67,15 +67,15 @@ public class DfsAlgorithm implements SearchAlgorithm {
         visited[cur.r][cur.c] = true;
         s.visitedNow.add(cur);
 
-        if (cur.equals(goal)) {
-            finished = true;
-            s.finished = true;
-            s.foundGoal = true;
-            s.path = buildPath();
-            s.distToGoal = dist[goal.r][goal.c];
-            s.message = "Achou o destino (DFS)!";
-            return s;
-        }
+//        if (cur.equals(goal)) {
+//            finished = true;
+//            s.finished = true;
+//            s.foundGoal = true;
+//            s.path = buildPath();
+//            s.distToGoal = dist[goal.r][goal.c];
+//            s.message = "Achou o destino (DFS)!";
+//            return s;
+//        }
 
         // ordem muda o “desenho” do DFS
         int[] dr = {1, 0, -1, 0};

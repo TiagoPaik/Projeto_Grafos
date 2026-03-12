@@ -96,6 +96,8 @@ public class GraphView {
         resultsArea.setWrapText(false);
         resultsArea.setPrefWidth(420);
         resultsArea.setStyle("-fx-font-family: Consolas; -fx-font-size: 11px;");
+        // TextArea cresce verticalmente para preencher todo o espaco disponivel no VBox
+        VBox.setVgrow(resultsArea, javafx.scene.layout.Priority.ALWAYS);
 
         Label titleRight = new Label("Relatorio de Analise");
         titleRight.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
@@ -103,6 +105,8 @@ public class GraphView {
         VBox rightPanel = new VBox(8, titleRight, resultsArea);
         rightPanel.setPadding(new Insets(10));
         rightPanel.setPrefWidth(440);
+        // VBox ocupa toda a altura do BorderPane (coluna direita)
+        rightPanel.setMaxHeight(Double.MAX_VALUE);
         rightPanel.setStyle(
                 "-fx-background-color:#fff; -fx-border-color:#e2e8f0; -fx-border-width:0 0 0 1;");
 
