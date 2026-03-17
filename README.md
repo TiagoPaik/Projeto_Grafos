@@ -98,7 +98,7 @@ src/main/java/
 
 ---
 
-## ⚙️ Como Executar
+## Como Executar
 
 ### Pré-requisitos
 
